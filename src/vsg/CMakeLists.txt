@@ -301,7 +301,7 @@ set(vsg_FOUND TRUE CACHE INTERNAL "vsg found.")
 set(CMAKE_DISABLE_FIND_PACKAGE_vsg TRUE CACHE INTERNAL "Disable find_package(vsg) as it's not necessary.")
 
 
-set_target_properties(vsg PROPERTIES FOLDER "VulkanSceneGraph")
+#set_target_properties(vsg PROPERTIES FOLDER "VulkanSceneGraph")
 if(MSVC)
     # ensure the libraries are all built in the lib directory
     macro(SET_OUTPUT_DIR_PROPERTY TARGET_TARGETNAME RELATIVE_OUTDIR)
@@ -380,7 +380,7 @@ target_include_directories(vsg
 )
 
 target_link_libraries(vsg ${LIBRARIES})
-
+#[[
 if (BUILD_SHARED_LIBS)
     target_compile_definitions(vsg INTERFACE VSG_SHARED_LIBRARY)
 endif()
@@ -408,3 +408,4 @@ install(
 vsg_add_cmake_support_files(
     CONFIG_TEMPLATE vsgConfig.cmake.in
 )
+]]
